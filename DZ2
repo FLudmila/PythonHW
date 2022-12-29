@@ -1,1 +1,51 @@
+#Задача 1. Напишите программу, которая принимает на вход число N и выдает список факториалов для чисел от 1 до N.
+пусть N = 4 -> [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
+N = int(input('Введите число '))
+
+f = 1
+for i in range(N):
+    i = i + 1
+    f = i * f
+    
+    print(f, end=" ")
+
+#Задача 2. Выведите таблицу истинности для выражения ¬(X ∧ Y) ∨ Z.
+
+X = int(input('Введите число '))
+Y = int(input('Введите число '))
+Z = int(input('Введите число '))
+
+bool1 =  not (X or Y or Z)
+bool2 = not X and not Y and not Z
+
+print(bool1 == bool2)
+
+#Задача 3. Даны две строки. Посчитайте сколько раз каждый символ первой строки встречается во второй
+#«one» «onetwonine» - o – 2, n – 3, e – 2
+
+import re
+string2 = "onetwonine"
+count = len (re.findall("o", string2))
+count1 = len (re.findall("n", string2))
+count2 = len (re.findall("e", string2))
+print ("Первый символ встречается : " +  str(count)) 
+print ("Второй символ встречается : " +  str(count1)) 
+print ("Третий символ встречается : " +  str(count2)) 
+
+#Задача 4. Задайте список из N элементов, заполненных числами из промежутка [-N, N]. Сдвиньте все элементы списка на 2 позиции вправо.
+3 -> [2, 3, -3, -2, -1, 0, 1]
+
+from random import Random, randint
+
+N = int(input('Введите число: '))
+numbers = []
+for i in range(-N,N+1,1):
+    numbers.append(i)
+    
+print(numbers)
+
+numbers = [numbers[-1]] + numbers[:-1]
+numbers = [numbers[-1]] + numbers[:-1]
+
+print(numbers)
