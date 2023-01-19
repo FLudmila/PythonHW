@@ -52,21 +52,21 @@ print("Пи =", round(pi, N))
 
 import random
 
-# запись в файл
+# # запись в файл
 def write_file(name,st):
     with open(name, 'w') as data:
         data.write(st)
 
-# создание случайного числа от 0 до 100
+# # создание случайного числа от 0 до 100
 def rnd():
     return random.randint(0,101)
 
-# создание коэффициентов многочлена
+# # создание коэффициентов многочлена
 def create_mn(k):
     lst = [rnd() for i in range(k+1)]
     return lst
     
-# создание многочлена в виде строки 
+# # создание многочлена в виде строки 
 def create_str(sp):
     lst= sp[::-1]
     wr = ''
@@ -88,7 +88,7 @@ def create_str(sp):
                 wr += ' = 0'
     return wr
 
-# получение степени многочлена
+# # получение степени многочлена
 def sq_mn(k):
     if 'x^' in k:
         i = k.find('^')
@@ -99,14 +99,14 @@ def sq_mn(k):
         num = -1
     return num
 
-# получение коэффицента члена многочлена
+# # получение коэффицента члена многочлена
 def k_mn(k):
     if 'x' in k:
         i = k.find('x')
         num = int(k[:i])
     return num
 
-# разбор многочлена и получение его коэффициентов
+# # разбор многочлена и получение его коэффициентов
 def calc_mn(st):
     st = st[0].replace(' ', '').split('=')
     st = st[0].split('+')
@@ -130,7 +130,7 @@ def calc_mn(st):
         
     return lst
     
-# создание двух файлов
+# # создание двух файлов
 
 k1 = int(input("Введите натуральную степень для первого файла k = "))
 k2 = int(input("Введите натуральную степень для второго файла k = "))
@@ -139,7 +139,7 @@ koef2 = create_mn(k2)
 write_file("file34_1.txt", create_str(koef1))
 write_file("file34_2.txt", create_str(koef2))
 
-# нахождение суммы многочлена
+# # нахождение суммы многочлена
 
 with open('file34_1.txt', 'r') as data:
     st1 = data.readlines()
