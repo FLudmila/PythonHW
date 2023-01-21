@@ -48,7 +48,7 @@ result = {i: l.count(i) for i in l}
 print(result)
 
 
-Задача 4*. Создайте игру в крестики-нолики.
+# Задача 4*. Создайте игру в крестики-нолики.
 print("*" * 10, " Игра Крестики-нолики для двух игроков ", "*" * 10)
 
 board = list(range(1,10))
@@ -97,14 +97,13 @@ def main(board):
         if counter > 4:
            tmp = check_win(board)
            if tmp:
-              print(tmp, "выиграл!")
+              print(tmp, "выиграл! УРА! УРА! Поздравляю!")
               win = True
               break
         if counter == 9:
-            print("Ничья!")
+            print("Ничья! Попробуйте еще раз!")
             break
     draw_board(board)
 main(board)
 
 input("Нажмите Enter для выхода!")
-
