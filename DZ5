@@ -44,8 +44,8 @@ while y <= m:
     y += 1
 print(l)
 
-l = input().split()
-for i in set(l): print (i,l.count(i)//2)
+result = {i: l.count(i) for i in l}
+print(result)
 
 
 Задача 4*. Создайте игру в крестики-нолики.
